@@ -17,15 +17,14 @@ test.describe('Sauce Demo Test Suite', () => {
 
   test('Verify the title as Swag Labs', async () => {
     await loginAndNavigateToHome(loginPage, 'standard_user', 'secret_sauce');
-    // Wait for title to be visible before checking
     await homePage.page.waitForSelector('.title');
-    await homePage.verifyTitle('Products'); // Adjusted expected title to 'Products'
+    await homePage.verifyTitle('Products'); 
   });
 
   test('Verify the login button text is capitalized', async () => {
     await loginPage.navigate();
     const loginButtonText = await loginPage.loginButton.textContent();
-    expect(loginButtonText.trim()).toBe('Login'); // Use `.toBe` with string and trim any whitespace
+    expect(loginButtonText.trim()).toBe('Login'); 
   });
 
   test('Login with valid credentials and verify filter dropdown', async ({ page }) => {

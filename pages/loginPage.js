@@ -9,6 +9,7 @@ class LoginPage {
     }
   
     async navigate() {
+        console.log("test")
       await this.page.goto('/');
     }
   
